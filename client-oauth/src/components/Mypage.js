@@ -16,13 +16,17 @@ class Mypage extends Component {
   async getGitHubUserInfo() {
     // TODO: GitHub API를 통해 사용자 정보를 받아오세요.
     // https://docs.github.com/en/free-pro-team@latest/rest/reference/users#get-the-authenticated-user
+
     const { accessToken } = this.props;
-    let resp = await axios.get('https://api.github.com/user', {
+    console.log(accessToken);
+    let response = await axios.get('https://api.github.com/user', {
       headers: {
-        authoriztion: `token ${accessToken}`,
+        authorization: `token ${accessToken}`,
       },
     });
-    const { name, login, html_url, public_repos } = resp.data;
+
+    const { name, login, html_url, public_repos } = response.data;
+
     this.setState({
       name,
       login,
@@ -30,18 +34,20 @@ class Mypage extends Component {
       public_repos,
     });
   }
+
   async getImages() {
     // TODO : 마찬가지로 액세스 토큰을 이용해 local resource server에서 이미지들을 받아와 주세요.
     // resource 서버에 GET /images 로 요청하세요.
+
     const { accessToken } = this.props;
 
-    let resp = await axios.get('http://localhost:8080/images', {
+    let response = await axios.get('http://localhost:8080/images', {
       headers: {
-        authoriztion: `token ${accessToken}`,
+        authorization: `token ${accessToken}`,
       },
     });
 
-    const { images } = resp.data;
+    const { images } = response.data;
 
     this.setState({
       images,
@@ -59,7 +65,9 @@ class Mypage extends Component {
     if (!accessToken) {
       return <div>로그인이 필요합니다</div>;
     }
+
     const { name, login, html_url, public_repos, images } = this.state;
+
     return (
       <div>
         <div className="mypageContainer">
@@ -89,7 +97,6 @@ class Mypage extends Component {
           </div>
 
           <div id="images">
-            {/* TODO: 여기에 img 태그를 이용해 resource server로 부터 받은 이미지를 출력하세요 */}
             {images.map((img) => (
               <img key={img.file} src={img.blob} />
             ))}
