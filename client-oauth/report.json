@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 6,
+    "passes": 0,
+    "pending": 0,
+    "failures": 6,
+    "start": "2021-09-27T03:53:20.701Z",
+    "end": "2021-09-27T03:53:21.629Z",
+    "duration": 928
+  },
+  "tests": [
+    {
+      "title": "GitHub 사용자 인증 링크로 이동해야 합니다",
+      "fullTitle": "Login.js GitHub 사용자 인증 링크로 이동해야 합니다",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: Invalid URL\n    at new NodeError (node:internal/errors:371:5)\n    at onParseError (node:internal/url:536:9)\n    at new URL (node:internal/url:612:5)\n    at Context.<anonymous> (__tests__/client.test.js:21:17)\n    at processImmediate (node:internal/timers:464:21)",
+        "input": "FILL_ME_IN",
+        "message": "Invalid URL",
+        "code": "ERR_INVALID_URL"
+      }
+    },
+    {
+      "title": "access token이 상태로 존재해야 합니다",
+      "fullTitle": "App.js access token이 상태로 존재해야 합니다",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected { isLogin: false } to have property 'accessToken'",
+        "showDiff": false,
+        "actual": {
+          "isLogin": false
+        },
+        "stack": "AssertionError: expected { isLogin: false } to have property 'accessToken'\n    at Context.<anonymous> (__tests__/client.test.js:32:27)\n    at processImmediate (node:internal/timers:464:21)"
+      }
+    },
+    {
+      "title": "authorization code가 url parameter로 전달될 경우, access token을 서버에서 받아올 수 있어야 합니다",
+      "fullTitle": "App.js authorization code가 url parameter로 전달될 경우, access token을 서버에서 받아올 수 있어야 합니다",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected undefined to deeply equal 'fake_access_token'",
+        "showDiff": true,
+        "expected": "fake_access_token",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected undefined to deeply equal 'fake_access_token'\n    at _callee$ (__tests__/client.test.js:46:34)\n    at tryCatch (node_modules/regenerator-runtime/runtime.js:63:40)\n    at Generator.invoke [as _invoke] (node_modules/regenerator-runtime/runtime.js:294:22)\n    at Generator.next (node_modules/regenerator-runtime/runtime.js:119:21)\n    at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)\n    at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)"
+      }
+    },
+    {
+      "title": "access token을 이용해 GitHub API를 호출하여 사용자 정보를 받아올 수 있어야 합니다",
+      "fullTitle": "Mypage.js access token을 이용해 GitHub API를 호출하여 사용자 정보를 받아올 수 있어야 합니다",
+      "duration": 302,
+      "currentRetry": 0,
+      "err": {
+        "message": "요구사항에 맞는 ajax 요청을 보내지 않았습니다.: expected 0 to deeply equal 1",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: 요구사항에 맞는 ajax 요청을 보내지 않았습니다.: expected 0 to deeply equal 1\n    at Timeout._onTimeout (__tests__/client.test.js:64:64)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "사용자 정보가 성공적으로 표시되어야 합니다",
+      "fullTitle": "Mypage.js 사용자 정보가 성공적으로 표시되어야 합니다",
+      "duration": 310,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 'FILL_ME_IN' to deeply equal '김코딩'",
+        "showDiff": true,
+        "actual": "FILL_ME_IN",
+        "expected": "김코딩",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 'FILL_ME_IN' to deeply equal '김코딩'\n    at Timeout._onTimeout (__tests__/client.test.js:87:47)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "인증된 사용자는 resources server로부터 이미지 접근이 가능합니다",
+      "fullTitle": "Mypage.js 인증된 사용자는 resources server로부터 이미지 접근이 가능합니다",
+      "duration": 305,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 0 to deeply equal 3",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "3",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 0 to deeply equal 3\n    at Timeout._onTimeout (__tests__/client.test.js:115:60)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "GitHub 사용자 인증 링크로 이동해야 합니다",
+      "fullTitle": "Login.js GitHub 사용자 인증 링크로 이동해야 합니다",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: Invalid URL\n    at new NodeError (node:internal/errors:371:5)\n    at onParseError (node:internal/url:536:9)\n    at new URL (node:internal/url:612:5)\n    at Context.<anonymous> (__tests__/client.test.js:21:17)\n    at processImmediate (node:internal/timers:464:21)",
+        "input": "FILL_ME_IN",
+        "message": "Invalid URL",
+        "code": "ERR_INVALID_URL"
+      }
+    },
+    {
+      "title": "access token이 상태로 존재해야 합니다",
+      "fullTitle": "App.js access token이 상태로 존재해야 합니다",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected { isLogin: false } to have property 'accessToken'",
+        "showDiff": false,
+        "actual": {
+          "isLogin": false
+        },
+        "stack": "AssertionError: expected { isLogin: false } to have property 'accessToken'\n    at Context.<anonymous> (__tests__/client.test.js:32:27)\n    at processImmediate (node:internal/timers:464:21)"
+      }
+    },
+    {
+      "title": "authorization code가 url parameter로 전달될 경우, access token을 서버에서 받아올 수 있어야 합니다",
+      "fullTitle": "App.js authorization code가 url parameter로 전달될 경우, access token을 서버에서 받아올 수 있어야 합니다",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected undefined to deeply equal 'fake_access_token'",
+        "showDiff": true,
+        "expected": "fake_access_token",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected undefined to deeply equal 'fake_access_token'\n    at _callee$ (__tests__/client.test.js:46:34)\n    at tryCatch (node_modules/regenerator-runtime/runtime.js:63:40)\n    at Generator.invoke [as _invoke] (node_modules/regenerator-runtime/runtime.js:294:22)\n    at Generator.next (node_modules/regenerator-runtime/runtime.js:119:21)\n    at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)\n    at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)"
+      }
+    },
+    {
+      "title": "access token을 이용해 GitHub API를 호출하여 사용자 정보를 받아올 수 있어야 합니다",
+      "fullTitle": "Mypage.js access token을 이용해 GitHub API를 호출하여 사용자 정보를 받아올 수 있어야 합니다",
+      "duration": 302,
+      "currentRetry": 0,
+      "err": {
+        "message": "요구사항에 맞는 ajax 요청을 보내지 않았습니다.: expected 0 to deeply equal 1",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "1",
+        "operator": "strictEqual",
+        "stack": "AssertionError: 요구사항에 맞는 ajax 요청을 보내지 않았습니다.: expected 0 to deeply equal 1\n    at Timeout._onTimeout (__tests__/client.test.js:64:64)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "사용자 정보가 성공적으로 표시되어야 합니다",
+      "fullTitle": "Mypage.js 사용자 정보가 성공적으로 표시되어야 합니다",
+      "duration": 310,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 'FILL_ME_IN' to deeply equal '김코딩'",
+        "showDiff": true,
+        "actual": "FILL_ME_IN",
+        "expected": "김코딩",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 'FILL_ME_IN' to deeply equal '김코딩'\n    at Timeout._onTimeout (__tests__/client.test.js:87:47)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "인증된 사용자는 resources server로부터 이미지 접근이 가능합니다",
+      "fullTitle": "Mypage.js 인증된 사용자는 resources server로부터 이미지 접근이 가능합니다",
+      "duration": 305,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 0 to deeply equal 3",
+        "showDiff": true,
+        "actual": "0",
+        "expected": "3",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 0 to deeply equal 3\n    at Timeout._onTimeout (__tests__/client.test.js:115:60)\n    at listOnTimeout (node:internal/timers:557:17)\n    at processTimers (node:internal/timers:500:7)",
+        "uncaught": true
+      }
+    }
+  ],
+  "passes": []
+}

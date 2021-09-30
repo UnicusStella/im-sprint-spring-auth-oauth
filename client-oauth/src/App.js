@@ -7,7 +7,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isLogin: false
+      isLogin: false,
+      accessToken: '',
       // TODO:
     };
     this.getAccessToken = this.getAccessToken.bind(this);
@@ -22,15 +23,23 @@ class App extends Component {
     // access token을 받아온 후
     //  - 로그인 상태를 true로 변경하고,
     //  - state에 access token을 저장하세요
+    let resp = await axios.post('http://localhost:8080/callback', {
+      authorizationCode: authorizationCode,
+    });
+
+    this.setState({
+      isLogin: true,
+      accessToken: resp.data.accessToken,
+    });
   }
 
   componentDidMount() {
-    const url = new URL(window.location.href)
-    const authorizationCode = url.searchParams.get('code')
+    const url = new URL(window.location.href);
+    const authorizationCode = url.searchParams.get('code');
     if (authorizationCode) {
       // authorization server로부터 클라이언트로 리디렉션된 경우, authorization code가 함께 전달됩니다.
       // ex) http://localhost:3000/?code=5e52fb85d6a1ed46a51f
-      this.getAccessToken(authorizationCode)
+      this.getAccessToken(authorizationCode);
     }
   }
 
@@ -38,12 +47,8 @@ class App extends Component {
     const { isLogin, accessToken } = this.state;
     return (
       <Router>
-        <div className='App'>
-          {isLogin ? (
-            <Mypage accessToken={accessToken} />
-          ) : (
-              <Login />
-            )}
+        <div className="App">
+          {isLogin ? <Mypage accessToken={accessToken} /> : <Login />}
         </div>
       </Router>
     );
