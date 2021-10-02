@@ -11,7 +11,7 @@ class Login extends Component {
     // 참고: https://docs.github.com/en/free-pro-team@latest/developers/apps/identifying-and-authorizing-users-for-github-apps
 
     this.GITHUB_LOGIN_URL =
-      'https://github.com/login/oauth/authorize?client_id=72c1ff94dc81db95b984&redirect_uri=http://localhost:3000';
+      'https://github.com/login/oauth/authorize?client_id=5a0ba47d6cec26f64fda';
   }
 
   socialLoginHandler() {
